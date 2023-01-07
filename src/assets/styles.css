@@ -1,0 +1,49 @@
+  .sugerencia{
+    padding: 5px;
+  }
+  
+  
+  .react-autosuggest__suggestions-container--open {
+
+    border: 1px solid #aaa;
+    background-color: #fff;
+   
+    z-index: 2;
+
+  }
+  
+  .react-autosuggest__suggestions-list{
+    list-style: none;
+    margin-bottom: 0px;
+    padding-left: 0px;
+    cursor: pointer;
+  }
+  
+  
+  .react-autosuggest__suggestion--highlighted {
+    background-color: #ddd;
+  }
+  
+
+  tr:nth-child(4) {background-color: rgb(196, 196, 196);}
+  tr:nth-child(5) {background-color: rgb(196, 196, 196);}
+  tr:nth-child(6) {background-color: rgb(196, 196, 196);}
+
+  tr:nth-child(10) {background-color: rgb(196, 196, 196);}
+  tr:nth-child(11) {background-color: rgb(196, 196, 196);}
+  tr:nth-child(12) {background-color: rgb(196, 196, 196);}
+
+  tr:nth-child(16) {background-color: rgb(196, 196, 196);}
+  tr:nth-child(17) {background-color: rgb(196, 196, 196);}
+  tr:nth-child(18) {background-color: rgb(196, 196, 196);}
+
+  tr:nth-child(22) {background-color: rgb(196, 196, 196);}
+  tr:nth-child(23) {background-color: rgb(196, 196, 196);}
+  tr:nth-child(24) {background-color: rgb(196, 196, 196);}
+
+  tr:nth-child(28) {background-color: rgb(196, 196, 196);}
+  tr:nth-child(29) {background-color: rgb(196, 196, 196);}
+  tr:nth-child(30) {background-color: rgb(196, 196, 196);}
+    
+
+
