@@ -5,7 +5,9 @@ import {useState, useEffect} from 'react'
 
 import HomePage from "./pages/HomePage"
 import LoginPage from "./pages/login/LoginPage"
-import RecordsListPage from "./pages/users/RecordsListPage"
+import RecordsListPage from "./pages/records/RecordsListPage"
+import CategorysPage from "./pages/categorys/CategorysPage"
+import AdminNoticesPage from "./pages/notices/AdminNoticesPage"
 
 import * as authService from "./services/auth.services"
 import { Routes, Route, Link, useNavigate, Navigate} from 'react-router-dom'
@@ -91,10 +93,13 @@ function App(){
                             <Link className='nav-link' to="/">Home</Link>
                         </li>
                         <li className="nav-item">
-                        {isAdmin() && <><Link className='nav-link' to={`/records`}>Ver records</Link></>}
+                            <Link className='nav-link' to="/categorys">Categorias</Link>
                         </li>
                         <li className="nav-item">
-                        {isAutenticated && !isAdmin() && <><Link className='nav-link' to={`/user/${id}/routine`}>Ver rutina</Link></>}
+                        <Link className='nav-link' to={`/records`}>Ver records</Link>
+                        </li>
+                        <li className="nav-item">
+                        {isAdmin() && <><Link className='nav-link' to={`/notices`}>Noticias</Link></>}
                         </li>
                         <li className="nav-item">
                         {!isAutenticated && <><Link className='nav-link' to={"/login"}>Login</Link> </>}
@@ -111,6 +116,8 @@ function App(){
                 <Route path="/" element={<HomePage/>}/>
                 <Route path="/login" element={<LoginPage onLogin={onLogin} />} />
                 <Route path="/records" element={<RecordsListPage/>}/>
+                <Route path="/categorys" element={<CategorysPage/>}/>
+                <Route path="/notices" element={<AdminNoticesPage/>}/>
 
                 <Route path="*" element={<div><h1>404</h1><p>Esta pagina no se encuentra disponible.</p></div>}/>
             </Routes>

@@ -2,10 +2,17 @@ import { useEffect, useState } from 'react';
 import {Link, useParams} from 'react-router-dom';
 import * as NoticesServices from '../services/notices.services.js';
 import Logo from '../components/Logo'
+import ModalReglas from '../components/ModalReglas'
 
 const name = localStorage.getItem('name')
 
 function HomePage() {
+
+    const [show, setShow] = useState(false);
+
+    const handleClose = () => setShow(false);
+    const handleShow = () => setShow(true);
+
     
     const [notice, setNotice] = useState([])
 
@@ -30,20 +37,29 @@ return (
     
     </div>
 
+    <div className='row justify-content-center'>
+        <h2 className='col-12 text-center mb-5'>Reglas del powerlifting</h2>
+        <button className='btn btn-primary col-2' onClick={handleShow}>Ver reglas</button>
+        <ModalReglas show={show} handleClose={handleClose} />
+    </div>
+
     <h2 className="text-center my-5">Últimas novedades</h2>
-
-    <div className="card-group">
+    <div className="card-group justify-content-center">
+        <a href=""></a>
         {notice.map(element => 
+            <div key={element._id} class="card largoCard mx-4 text-center">
+                <img src={element.image} alt={element.name} />
+                <div class="card-body">
+                <h3 className="card-title my-3">{element.name}</h3>
+                <p className="card-text mt-2">{element.description}</p>
+                <a target="_BLANK" href={element.form}>{element.form}</a>
 
-            <div key={element._id} className="card border-white">
-                <div className="card-body text-center">
-                    
-                    <img src={element.imagen} alt={element.name} />
-
-                    <h3 className="card-title">{element.name}</h3>
-                    <p className="card-text">{element.description}</p>
                 </div>
-            </div>
+                <div class="card-footer">
+                    <small class="text-muted">Last updated 3 mins ago</small>
+                </div>
+        </div>
+
             )}
     </div>
 
