@@ -3,6 +3,8 @@ import {Link, useParams} from 'react-router-dom';
 import * as NoticesServices from '../services/notices.services.js';
 import Logo from '../components/Logo'
 import ModalReglas from '../components/ModalReglas'
+import AccordionEquipe from '../components/AccordionEquipe'
+
 
 const name = localStorage.getItem('name')
 
@@ -41,6 +43,16 @@ return (
         <h2 className='col-12 text-center mb-5'>Reglas del powerlifting</h2>
         <button className='btn btn-primary col-2' onClick={handleShow}>Ver reglas</button>
         <ModalReglas show={show} handleClose={handleClose} />
+        
+    </div>
+
+    <div className='row justify-content-center '>
+        <h2 className='col-12 text-center my-5'>Equipo permitido</h2>
+        <div className='col-12 col-lg-6'>
+        <AccordionEquipe />
+
+        </div>
+        
     </div>
 
     <h2 className="text-center my-5">Últimas novedades</h2>

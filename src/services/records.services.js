@@ -1,5 +1,5 @@
-async function findRecords(exercise,clase,category,sex) {
-    return fetch(`http://localhost:2022/api/records/${exercise}/${clase}/${category}/${sex}`, {
+async function findRecords(exercise, clase, category , sex, eqUno, eqDos) {
+    return fetch(`http://localhost:2022/api/records/${exercise}/${clase}/${category}/${sex}/${eqUno}/${eqDos}`, {
         method: 'GET',
         headers: {
             'Content-Type': 'application/json',
