@@ -19,13 +19,13 @@ function UsersListPage() {
     const [recordsTotal, setRecordsTotal] = useState([])
     const [age, setAge] = useState("24-34")
     const [sex, setSex] = useState("M")
-    const [equiped1, setEquiped1] = useState("Raw")
-    const [equiped2, setEquiped2] = useState("Wraps")
+    /*const [equiped1, setEquiped1] = useState("Raw")
+    const [equiped2, setEquiped2] = useState("Wraps")*/
 
 
     //useEffect que renderiza por primera vez los records predeterminados
     useEffect(() => {
-        records("24-34", "M", "Raw", "Wraps")
+        records("24-34", "M"/*, "Raw", "Wraps"*/)
     }, [])
 
     const optionsAge = [
@@ -50,12 +50,12 @@ function UsersListPage() {
         {value: "F",label:"F"}]
 
 
-    const optionsEquiped = [
+    /*const optionsEquiped = [
         {value: "Raw",label:"Raw"},
         {value: "Wraps",label:"Wraps"},
         {value: "Raw+Wraps",label:"Raw+Wraps"},
 
-    ]
+    ]*/
     
     //Handle que guarda el value del select en age, resetea los records e imprime
     const handleChangeAge = (selectedOption) => {
@@ -65,12 +65,14 @@ function UsersListPage() {
         setRecordsDeadlift([])
         setRecordsTotal([])
         if(sex == "M"){
-            if(equiped1 == "Raw" && equiped2 == "Wraps"){
+            records(selectedOption.value, sex/*,"Raw", "Wraps"*/)
+            /*if(equiped1 == "Raw" && equiped2 == "Wraps"){
                 records(selectedOption.value, sex,"Raw", "Wraps")
             }else{
                 records(selectedOption.value, sex, equiped1.value, equiped2.value)
-            }
-        
+            }*/
+        }else{
+            records(selectedOption.value,sex.value)
         }
         
     }
@@ -84,14 +86,15 @@ function UsersListPage() {
         setRecordsDeadlift([])
         setRecordsTotal([])
         if(age == "24-34"){
-            if(equiped1 == "Raw" && equiped2 == "Wraps"){
+            records(age, selectedOption2.value/*,"Raw", "Wraps"*/)
+            /*if(equiped1 == "Raw" && equiped2 == "Wraps"){
                 records(age, selectedOption2.value,"Raw", "Wraps")
             }
-        }
-        else{records(age.value, selectedOption2.value, equiped1, equiped2)}
-    }
+        }else{records(age.value, selectedOption2.value, equiped1, equiped2)}*/
+        
+    }else{records(age.value, selectedOption2.value/*, equiped1, equiped2*/)}
 
-    const handleChangeEquiped = (selectedOption) => {
+    /*const handleChangeEquiped = (selectedOption) => {
         if(selectedOption.value == "Raw+Wraps"){
             setEquiped1("Raw")
             setEquiped2("Wraps")
@@ -119,34 +122,34 @@ function UsersListPage() {
             }
         
         }
-        
+        */
     }
 
     //Función asincronica para imprimir los records, traer solo los nombres únicos y solo los 3 primeros.
-    async function imprimo(clase,edad,sexo,eq1,eq2){
+    async function imprimo(clase,edad,sexo/*,eq1,eq2*/){
 
-        await RecordsService.findRecords("squat",clase,edad,sexo,eq1,eq2)
+        await RecordsService.findRecords("squat",clase,edad,sexo/*,eq1,eq2*/)
             .then(records => {
                 const uniq = _.uniqBy(records, 'Name')
                 const primerosTres = uniq.slice(0,3)
                 setRecordsSquat(data => data.concat(primerosTres))
             })
 
-            await RecordsService.findRecords("bench",clase,edad,sexo,eq1,eq2)
+            await RecordsService.findRecords("bench",clase,edad,sexo/*,eq1,eq2*/)
             .then(records => {
                 const uniq = _.uniqBy(records, 'Name')
                 const primerosTres = uniq.slice(0,3)
                 setRecordsBench(data => data.concat(primerosTres))
             })
 
-            await RecordsService.findRecords("deadlift",clase,edad,sexo,eq1,eq2)
+            await RecordsService.findRecords("deadlift",clase,edad,sexo/*,eq1,eq2*/)
             .then(records => {
                 const uniq = _.uniqBy(records, 'Name')
                 const primerosTres = uniq.slice(0,3)
                 setRecordsDeadlift(data => data.concat(primerosTres))
             })
 
-            await RecordsService.findRecords("total",clase,edad,sexo,eq1,eq2)
+            await RecordsService.findRecords("total",clase,edad,sexo/*,eq1,eq2*/)
             .then(records => {
                 const uniq = _.uniqBy(records, 'Name')
                 const primerosTres = uniq.slice(0,3)
@@ -156,17 +159,17 @@ function UsersListPage() {
 
     //Función para impimir todos los records según la clase y los filtros que seleccionemos.
     function records(edad,sex){
-        imprimo(52,edad,sex,"Raw","Wraps")
-        imprimo(56,edad,sex,"Raw","Wraps")
-        imprimo(60,edad,sex,"Raw","Wraps")
-        imprimo(67.5,edad,sex,"Raw","Wraps")
-        imprimo(75,edad,sex,"Raw","Wraps")
-        imprimo(82.5,edad,sex,"Raw","Wraps")
-        imprimo(90,edad,sex,"Raw","Wraps")
-        imprimo(100,edad,sex,"Raw","Wraps")
-        imprimo(110,edad,sex,"Raw","Wraps")
-        imprimo(125,edad,sex,"Raw","Wraps")
-        imprimo(140,edad,sex,"Raw","Wraps")
+        imprimo(52,edad,sex/*,"Raw","Wraps"*/)
+        imprimo(56,edad,sex/*,"Raw","Wraps"*/)
+        imprimo(60,edad,sex/*,"Raw","Wraps"*/)
+        imprimo(67.5,edad,sex/*,"Raw","Wraps"*/)
+        imprimo(75,edad,sex/*,"Raw","Wraps"*/)
+        imprimo(82.5,edad,sex/*,"Raw","Wraps"*/)
+        imprimo(90,edad,sex/*,"Raw","Wraps"*/)
+        imprimo(100,edad,sex/*,"Raw","Wraps"*/)
+        imprimo(110,edad,sex/*,"Raw","Wraps"*/)
+        imprimo(125,edad,sex/*,"Raw","Wraps"*/)
+        imprimo(140,edad,sex/*,"Raw","Wraps"*/)
     }
 
     //Ordeno por clase
@@ -196,13 +199,6 @@ function UsersListPage() {
                         defaultValue={optionsSex[0]}
                         options={optionsSex} 
                         onChange={handleChangeSex}
-                    />
-                </div>
-                <div className='col-6'>
-                    <Select 
-                        defaultValue={optionsEquiped[2]}
-                        options={optionsEquiped} 
-                        onChange={handleChangeEquiped}
                     />
                 </div>
             </div>
