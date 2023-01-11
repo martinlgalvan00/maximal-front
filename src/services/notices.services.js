@@ -1,6 +1,6 @@
 //Busca todas las noticias
 async function findAllNotices() {
-    return fetch(`http://localhost:2022/api/notices`, {
+    return fetch(`http://maximal-back.vercel.app/api/notices`, {
         method: 'GET',
         headers: {
             'Content-Type': 'application/json',
@@ -19,7 +19,7 @@ async function findAllNotices() {
 
 //Busca una noticia por su ID
 async function findByNoticeId(id) {
-    return fetch(`http://localhost:2022/api/notices/${id}`, {
+    return fetch(`http://maximal-back.vercel.app/api/notices/${id}`, {
         method: 'GET',
         headers: {
             'Content-Type': 'application/json',
@@ -38,7 +38,7 @@ async function findByNoticeId(id) {
 
 //Crea una noticia
 async function createNotice(notice) {
-    return fetch(`http://localhost:2022/api/notices`, {
+    return fetch(`http://maximal-back.vercel.app/api/notices`, {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',
@@ -59,7 +59,7 @@ async function createNotice(notice) {
 //Editar un día
 
 async function editNotice(id, notice) {
-    return fetch(`http://localhost:2022/api/notices/${id}`, {
+    return fetch(`http://maximal-back.vercel.app/api/notices/${id}`, {
         method: 'PATCH',
         headers: {
             'Content-Type': 'application/json',
@@ -79,7 +79,7 @@ async function editNotice(id, notice) {
 
 //Eliminar un día por su ID
 async function deleteNotice(id) {
-    return fetch(`http://localhost:2022/api/notices/${id}`, {
+    return fetch(`http://maximal-back.vercel.app/api/notices/${id}`, {
         method: 'DELETE',
         headers: {
             'Content-Type': 'application/json',
