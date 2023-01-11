@@ -1,5 +1,5 @@
 async function findRecords(exercise, clase, category , sex, eqUno, eqDos) {
-    return fetch(`http://maximal-back.vercel.app/api/records/${exercise}/${clase}/${category}/${sex}/${eqUno}/${eqDos}`, {
+    return fetch(`https://maximal-back.vercel.app/api/records/${exercise}/${clase}/${category}/${sex}/${eqUno}/${eqDos}`, {
         method: 'GET',
         headers: {
             'Content-Type': 'application/json',

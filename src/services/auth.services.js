@@ -1,5 +1,5 @@
 async function login(email, password) {
-    return fetch('http://maximal-back.vercel.app/api/users/login', {
+    return fetch('https://maximal-back.vercel.app/api/users/login', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json'
@@ -17,7 +17,7 @@ async function login(email, password) {
 }
 
 async function logout() {
-    return fetch('http://maximal-back.vercel.app/api/users/logout', {
+    return fetch('https://maximal-back.vercel.app/api/users/logout', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',
