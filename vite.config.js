@@ -8,10 +8,8 @@ export default defineConfig({
   publicDir: "public",
   build: {
     outDir: "dist",
-    assetsDir: "assets"
+    assetsDir: "assets",
+    chunkSizeWarningLimit: 1600
   },
   plugins: [react()],
-  build:{
-    chunkSizeWarningLimit: 1600,
-  }
 })
