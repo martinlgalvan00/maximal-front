@@ -25,7 +25,7 @@ function UsersListPage() {
 
     //useEffect que renderiza por primera vez los records predeterminados
     useEffect(() => {
-        records("24-34", "M"/*, "Raw", "Wraps"*/)
+        records("24-34", "M")
     }, [])
 
     const optionsAge = [
@@ -65,12 +65,7 @@ function UsersListPage() {
         setRecordsDeadlift([])
         setRecordsTotal([])
         if(sex == "M"){
-            records(selectedOption.value, sex/*,"Raw", "Wraps"*/)
-            /*if(equiped1 == "Raw" && equiped2 == "Wraps"){
-                records(selectedOption.value, sex,"Raw", "Wraps")
-            }else{
-                records(selectedOption.value, sex, equiped1.value, equiped2.value)
-            }*/
+            records(selectedOption.value, sex)
         }else{
             records(selectedOption.value,sex.value)
         }
@@ -86,70 +81,36 @@ function UsersListPage() {
         setRecordsDeadlift([])
         setRecordsTotal([])
         if(age == "24-34"){
-            records(age, selectedOption2.value/*,"Raw", "Wraps"*/)
-            /*if(equiped1 == "Raw" && equiped2 == "Wraps"){
-                records(age, selectedOption2.value,"Raw", "Wraps")
-            }
-        }else{records(age.value, selectedOption2.value, equiped1, equiped2)}*/
-        
-    }else{records(age.value, selectedOption2.value/*, equiped1, equiped2*/)}
+            records(age, selectedOption2.value)    
+        }else{records(age.value, selectedOption2.value)}
 
-    /*const handleChangeEquiped = (selectedOption) => {
-        if(selectedOption.value == "Raw+Wraps"){
-            setEquiped1("Raw")
-            setEquiped2("Wraps")
-        }
-        if(selectedOption.value == "Raw"){
-            setEquiped1("Raw")
-            setEquiped2("Raw")
-        }
-        if(selectedOption.value == "Wraps"){
-            setEquiped1("Wraps")
-            setEquiped2("Wraps")
-
-        }
-        setRecordsSquat([])
-        setRecordsBench([])
-        setRecordsDeadlift([])
-        setRecordsTotal([])
-        console.log(equiped1)
-        console.log(equiped2)
-        if(sex == "M"){
-            if(age == "24-34"){
-                records(age, sex,equiped1, equiped2)
-            }else{
-                records(age, sex.value, equiped1.value, equiped2.value)
-            }
-        
-        }
-        */
     }
 
     //Función asincronica para imprimir los records, traer solo los nombres únicos y solo los 3 primeros.
-    async function imprimo(clase,edad,sexo/*,eq1,eq2*/){
+    async function imprimo(clase,edad,sexo){
 
-        await RecordsService.findRecords("squat",clase,edad,sexo/*,eq1,eq2*/)
+        await RecordsService.findRecords("squat",clase,edad,sexo)
             .then(records => {
                 const uniq = _.uniqBy(records, 'Name')
                 const primerosTres = uniq.slice(0,3)
                 setRecordsSquat(data => data.concat(primerosTres))
             })
 
-            await RecordsService.findRecords("bench",clase,edad,sexo/*,eq1,eq2*/)
+            await RecordsService.findRecords("bench",clase,edad,sexo)
             .then(records => {
                 const uniq = _.uniqBy(records, 'Name')
                 const primerosTres = uniq.slice(0,3)
                 setRecordsBench(data => data.concat(primerosTres))
             })
 
-            await RecordsService.findRecords("deadlift",clase,edad,sexo/*,eq1,eq2*/)
+            await RecordsService.findRecords("deadlift",clase,edad,sexo)
             .then(records => {
                 const uniq = _.uniqBy(records, 'Name')
                 const primerosTres = uniq.slice(0,3)
                 setRecordsDeadlift(data => data.concat(primerosTres))
             })
 
-            await RecordsService.findRecords("total",clase,edad,sexo/*,eq1,eq2*/)
+            await RecordsService.findRecords("total",clase,edad,sexo)
             .then(records => {
                 const uniq = _.uniqBy(records, 'Name')
                 const primerosTres = uniq.slice(0,3)
@@ -159,17 +120,17 @@ function UsersListPage() {
 
     //Función para impimir todos los records según la clase y los filtros que seleccionemos.
     function records(edad,sex){
-        imprimo(52,edad,sex/*,"Raw","Wraps"*/)
-        imprimo(56,edad,sex/*,"Raw","Wraps"*/)
-        imprimo(60,edad,sex/*,"Raw","Wraps"*/)
-        imprimo(67.5,edad,sex/*,"Raw","Wraps"*/)
-        imprimo(75,edad,sex/*,"Raw","Wraps"*/)
-        imprimo(82.5,edad,sex/*,"Raw","Wraps"*/)
-        imprimo(90,edad,sex/*,"Raw","Wraps"*/)
-        imprimo(100,edad,sex/*,"Raw","Wraps"*/)
-        imprimo(110,edad,sex/*,"Raw","Wraps"*/)
-        imprimo(125,edad,sex/*,"Raw","Wraps"*/)
-        imprimo(140,edad,sex/*,"Raw","Wraps"*/)
+        imprimo(52,edad,sex)
+        imprimo(56,edad,sex)
+        imprimo(60,edad,sex)
+        imprimo(67.5,edad,sex)
+        imprimo(75,edad,sex)
+        imprimo(82.5,edad,sex)
+        imprimo(90,edad,sex)
+        imprimo(100,edad,sex)
+        imprimo(110,edad,sex)
+        imprimo(125,edad,sex)
+        imprimo(140,edad,sex)
     }
 
     //Ordeno por clase
@@ -177,10 +138,6 @@ function UsersListPage() {
     recordsBench.sort((x,y) => x.WeightClassKg - y.WeightClassKg) 
     recordsDeadlift.sort((x,y) => x.WeightClassKg - y.WeightClassKg) 
     recordsTotal.sort((x,y) => x.WeightClassKg - y.WeightClassKg) 
-
-            
-
-
 
     return (
         <section className='container'>
