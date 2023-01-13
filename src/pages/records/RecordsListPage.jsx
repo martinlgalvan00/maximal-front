@@ -121,20 +121,19 @@ function UsersListPage() {
     //Función para impimir todos los records según la clase y los filtros que seleccionemos.
     if(sex == "M"){
         function records(edad,sex){
-            imprimo(52,edad,sex)
-            imprimo(56,edad,sex)
-            imprimo(60,edad,sex)
-            imprimo(67.5,edad,sex)
-            imprimo(75,edad,sex)
-            imprimo(82.5,edad,sex)
-            imprimo(90,edad,sex)
-            imprimo(100,edad,sex)
-            imprimo(110,edad,sex)
-            imprimo(125,edad,sex)
-            //+140
-        }
-    } else{
-        function records(edad,sex){
+            if(sex == "M"){
+                imprimo(52,edad,sex)
+                imprimo(56,edad,sex)
+                imprimo(60,edad,sex)
+                imprimo(67.5,edad,sex)
+                imprimo(75,edad,sex)
+                imprimo(82.5,edad,sex)
+                imprimo(90,edad,sex)
+                imprimo(100,edad,sex)
+                imprimo(110,edad,sex)
+                imprimo(125,edad,sex)
+                //+140
+            } else if(sex == "F")
             imprimo(44,edad,sex)
             imprimo(48,edad,sex)
             imprimo(52,edad,sex)
@@ -145,10 +144,8 @@ function UsersListPage() {
             imprimo(82.5,edad,sex)
             imprimo(90,edad,sex)
             //+90
-
-
         }
-    }
+    } 
     
 
     //Ordeno por clase
