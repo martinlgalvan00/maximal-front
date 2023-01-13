@@ -6,6 +6,7 @@ import Offcanvas from 'react-bootstrap/Offcanvas';
 import {useState,useEffect} from 'react'
 import {useNavigate} from 'react-router-dom'
 import * as authService from "../services/auth.services"
+import { Link } from 'react-router-dom';
 
 function NavBarOffCanvas() {
 
@@ -53,9 +54,9 @@ function isAdmin(){
   return (
 <>
       {[false].map((expand) => (
-        <Navbar key={expand} bg="light" expand={expand} className="mb-3">
-          <Container fluid>
-            <Navbar.Brand href="#">Maximal STRCORP</Navbar.Brand>
+        <Navbar key={expand} bg="light" expand={expand} className="mb-3 ">
+          <Container fluid >
+            <Navbar.Brand href="/">Maximal STR CORP</Navbar.Brand>
             <Navbar.Toggle aria-controls={`offcanvasNavbar-expand-${expand}`} />
             <Navbar.Offcanvas
               id={`offcanvasNavbar-expand-${expand}`}
@@ -63,18 +64,18 @@ function isAdmin(){
               placement="end"
             >
               <Offcanvas.Header closeButton>
-                <Offcanvas.Title id={`offcanvasNavbarLabel-expand-${expand}`}>
-                  Offcanvas
+                <Offcanvas.Title id={`offcanvasNavbarLabel-expand-${expand}` }>
+                  Maximal STR CORP
                 </Offcanvas.Title>
               </Offcanvas.Header>
               <Offcanvas.Body>
-                <Nav className="justify-content-end flex-grow-1 pe-3">
-                  <Nav.Link href="/">Home</Nav.Link>
-                  <Nav.Link href="/categorys">Categorias</Nav.Link>
-                  <Nav.Link href="/records">Records</Nav.Link>
-                  {isAdmin() && <Nav.Link href={`/notices`}>Administrar noticias</Nav.Link>}
-                  {!isAutenticated && <><Nav.Link href={"/login"}>Login</Nav.Link> </>}
-                  {isAutenticated && <><Nav.Link onClick={onLogout}>Logout</Nav.Link> </>}
+                <Nav className="justify-content-end align-items-center flex-grow-1 pe-3">
+                  <Nav.Link className='a' href="/">Home</Nav.Link>
+                  <Nav.Link className='a' href="/categorys">Categorias</Nav.Link>
+                  <Nav.Link className='a' href="/records">Records</Nav.Link>
+                  {isAdmin() && <Nav.Link className='a' href={`/notices`}>Administrar noticias</Nav.Link>}
+                  {!isAutenticated && <><Nav.Link className='a' href={"/login"}>Login</Nav.Link> </>}
+                  {isAutenticated && <><Nav.Link className='a' onClick={onLogout}>Logout</Nav.Link> </>}
                   
                 </Nav>
               </Offcanvas.Body>
