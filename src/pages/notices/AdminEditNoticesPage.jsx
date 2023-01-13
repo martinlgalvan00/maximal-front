@@ -1,12 +1,15 @@
 import {useState} from 'react'
 import * as NoticeService from '../services/notices.services.js'
 
-import {useNavigate} from 'react-router-dom'
+import {useNavigate, useParams} from 'react-router-dom'
 
 
 
 
-function createNotice(){
+function editNotice(){
+
+    const {id} = useParams()
+
     const [name, setName] = useState("")
     const [description, setDescription] = useState("")
     const [form, setForm] = useState("")
@@ -31,7 +34,10 @@ function createNotice(){
     //Solucionar problema fakepath
 
     function onSubmit(){
-        NoticeService.createNotice({name,description,form,image})
+        NoticeService.editNotice(id, {name,description,form,image})
+            .then(
+                navigate("/")
+            )
     }
 
     return (
@@ -41,26 +47,26 @@ function createNotice(){
             <div className='row justify-content-center'>
                 <form encType='multipart/form-data' className='col-10 col-lg-6' onSubmit={onSubmit}>
 
-                    <div className="my-3">
+                    <div className="mb-3">
                         <label htmlFor="name" className="visually-hidden ">Nombre de la noticia</label>
-                        <input type="text" className="form-control" id="name" name="name"  onChange={changeName} value={name} placeholder="Competencia el **/**" />
+                        <input type="text" className="form-control" id="name" name="name"  onChange={changeName} value={name} />
                     </div>
 
-                    <div className="my-3">
+                    <div className="mb-3">
                         <label htmlFor="description" className="visually-hidden ">Descripción de la noticia</label>
-                        <input type="text" className="form-control" id="description" name="description"  onChange={changeDescription} placeholder="Descripcion de la noticia" />
+                        <input type="text" className="form-control" id="description" name="description" value={description}  onChange={changeDescription} />
                     </div>
 
                     <div className="my-3">
                         <label htmlFor="form" className="visually-hidden ">Formulario</label>
-                        <input type="text" className="form-control" id="form" name="form"  onChange={changeForm} placeholder="Formulario" />
+                        <input type="text" className="form-control" id="form" name="form"  onChange={changeForm} value={form} />
                     </div>
 
-                    <div className="my-3 form-check p-0">
+                    <div className="mb-3 form-check p-0">
                         <label htmlFor="image" className="visually-hidden ">Imagen de la noticia</label>
-                        <input type="file" className="form-control" id="image" name="image"  onChange={changeImage} placeholder="https" />
+                        <input type="file" className="form-control" id="image" name="image" onChange={changeImage} value={image} />
                     </div>
-                    <button className='input-group-text btn btn-warning'>Crear noticia</button>
+                    <button className='input-group-text btn btn-warning'>Editar noticia</button>
  
                 </form>
             </div>
@@ -71,4 +77,4 @@ function createNotice(){
     )
 }
 
-export default createNotice
+export default editNotice

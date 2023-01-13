@@ -8,9 +8,13 @@ import LoginPage from "./pages/login/LoginPage"
 import RecordsListPage from "./pages/records/RecordsListPage"
 import CategorysPage from "./pages/categorys/CategorysPage"
 import AdminNoticesPage from "./pages/notices/AdminNoticesPage"
+import AdminEditNoticesPage from "./pages/notices/AdminEditNoticesPage"
+
+import NavBar from './components/NavBarOffCanvas'
 
 import * as authService from "./services/auth.services"
 import { Routes, Route, Link, useNavigate, Navigate} from 'react-router-dom'
+import { Nav } from 'react-bootstrap';
 
 
 function RoutePrivate( {isAutenticate, children}){
@@ -80,44 +84,15 @@ function App(){
        
         <>
 
-        <nav className="navbar navbar-expand-lg bg-light">
-            
-            <div className="container-fluid">
-                <a className="navbar-brand" href="/">Routine Schedule</a>
-                <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                    <span className="navbar-toggler-icon"></span>
-                </button>
-                <div className="collapse navbar-collapse justify-content-end" id="navbarNav">
-                    <ul className="navbar-nav text-center">
-                        <li className="nav-item">
-                            <Link className='nav-link' to="/">Home</Link>
-                        </li>
-                        <li className="nav-item">
-                            <Link className='nav-link' to="/categorys">Categorias</Link>
-                        </li>
-                        <li className="nav-item">
-                        <Link className='nav-link' to={`/records`}>Ver records</Link>
-                        </li>
-                        <li className="nav-item">
-                        {isAdmin() && <><Link className='nav-link' to={`/notices`}>Noticias</Link></>}
-                        </li>
-                        <li className="nav-item">
-                        {!isAutenticated && <><Link className='nav-link' to={"/login"}>Login</Link> </>}
-                        </li>
-                        <li className="nav-item">
-                        {isAutenticated && <><Link className='nav-link' onClick={onLogout}>Logout</Link> </>}
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </nav>
+        <NavBar />
 
             <Routes>
                 <Route path="/" element={<HomePage/>}/>
                 <Route path="/login" element={<LoginPage onLogin={onLogin} />} />
                 <Route path="/records" element={<RecordsListPage/>}/>
                 <Route path="/categorys" element={<CategorysPage/>}/>
-                <Route path="/notices" element={<AdminNoticesPage/>}/>
+                <Route path="/notices" element={<RoutePrivate isAutenticate={isAutenticated}><AdminNoticesPage/></RoutePrivate>}/>
+                <Route path="/notices/:id" element={<RoutePrivate isAutenticate={isAutenticated}><AdminEditNoticesPage/></RoutePrivate>}/>
 
                 <Route path="*" element={<div><h1>404</h1><p>Esta pagina no se encuentra disponible.</p></div>}/>
             </Routes>

@@ -161,7 +161,7 @@ function UsersListPage() {
             </div>
 
             <div className='row justify-content-center my-2'>
-                <div className='col-12 col-lg-6'>
+                <div className='col-10 col-lg-6'>
                     <h2 className='text-center my-5 pb-2'>Sentadilla (Full Power)</h2>
                     <table className="table table-bordered text-center align-middle tableRecords">
                         <thead className='table-light'>
@@ -191,7 +191,7 @@ function UsersListPage() {
                 </div>
 
 
-                <div className='col-12 col-lg-6'>
+                <div className='col-10 col-lg-6'>
                     <h2 className='text-center my-5 pb-2'>Banco plano (Full Power)</h2>
                     <table className="table table-bordered text-center align-middle tableRecords">
                         <thead className='table-light'>
@@ -221,7 +221,7 @@ function UsersListPage() {
                 </div>
 
 
-                <div className='col-12 col-lg-6'>
+                <div className='col-10 col-lg-6'>
                     <h2 className='text-center my-5 pb-2'>Peso muerto (Full Power)</h2>
                     <table className="table table-bordered text-center align-middle tableRecords">
                         <thead className='table-light'>
@@ -251,7 +251,7 @@ function UsersListPage() {
                 </div>
 
 
-                <div className='col-12 col-lg-6'>
+                <div className='col-10 col-lg-6'>
                     <h2 className='text-center my-5 pb-2'>Total (Full Power)</h2>
                     <table className="table table-bordered text-center align-middle tableRecords">
                         <thead className='table-light'>

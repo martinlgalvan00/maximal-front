@@ -8,7 +8,7 @@ function ModalReglas({show, handleClose}) {
     <>
       <Modal size="lg" centered show={show} onHide={handleClose}>
         <Modal.Header closeButton>
-          <Modal.Title><h2> Reglas generales del powerlifting</h2></Modal.Title>
+          <Modal.Title><h2 className='text-center'> Reglas generales del powerlifting</h2></Modal.Title>
         </Modal.Header>
         <Modal.Body>
           <p>Desde <b>M.S.C</b> (Maximal Strength Corporation) reconocemos los siguientes levantamientos,
@@ -35,10 +35,6 @@ function ModalReglas({show, handleClose}) {
             mismo peso al momento del pesaje y eventualmente logran un mismo total al final de la
             competición, el levantador que hace el total primero tendrá precedencia sobre el otro
             levantador.
-          </p>
-            
-          <p>El mismo procedimiento será aplicado cuando sean entregados premios por
-            squat, bench press y deadlift o cuando se logre un Record Mundial.
           </p>
             
         </Modal.Body>

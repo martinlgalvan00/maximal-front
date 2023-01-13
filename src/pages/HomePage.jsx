@@ -40,7 +40,7 @@ return (
     </div>
 
     <div className='row justify-content-center'>
-        <h2 className='col-12 text-center mb-5'>Reglas del powerlifting</h2>
+        <h2 className='col-12 text-center mb-5'>Reglas generales del powerlifting</h2>
         <button className='btn btn-primary col-6 col-lg-2 ' onClick={handleShow}>Ver reglas</button>
         <ModalReglas show={show} handleClose={handleClose} />
         
