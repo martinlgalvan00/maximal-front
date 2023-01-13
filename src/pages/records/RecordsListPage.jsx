@@ -119,7 +119,6 @@ function UsersListPage() {
     }
 
     //Función para impimir todos los records según la clase y los filtros que seleccionemos.
-    if(sex == "M"){
         function records(edad,sex){
             if(sex == "M"){
                 imprimo(52,edad,sex)
@@ -145,7 +144,6 @@ function UsersListPage() {
             imprimo(90,edad,sex)
             //+90
         }
-    } 
     
 
     //Ordeno por clase
