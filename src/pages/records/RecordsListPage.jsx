@@ -132,7 +132,7 @@ function UsersListPage() {
                 imprimo(110,edad,sex)
                 imprimo(125,edad,sex)
                 //+140
-            } else if(sex == "F")
+            } else if(sex == "F"){
             imprimo(44,edad,sex)
             imprimo(48,edad,sex)
             imprimo(52,edad,sex)
@@ -143,6 +143,7 @@ function UsersListPage() {
             imprimo(82.5,edad,sex)
             imprimo(90,edad,sex)
             //+90
+            }
         }
     
 
