@@ -1,5 +1,5 @@
 import {useState} from 'react'
-import * as NoticeService from '../services/notices.services.js'
+import * as NoticeService from '../../services/notices.services.js'
 
 import {useNavigate, useParams} from 'react-router-dom'
 

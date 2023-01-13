@@ -27,8 +27,6 @@ function RoutePrivate( {isAutenticate, children}){
 
 function App(){
     const navigate = useNavigate()
-    const id = localStorage.getItem('_id')
-
 
     const [isAutenticated, setIsAutenticated] = useState(null)
     
@@ -52,32 +50,9 @@ function App(){
             navigate(`/`)
         }
     
-        function onLogout(){
-            
-            setIsAutenticated(false)
-            localStorage.removeItem('token')
-            localStorage.removeItem('role')
-            localStorage.removeItem('_id')
-            localStorage.removeItem('name')
-            
-            authService.logout()
-            navigate('/')
-        }
-
         if(isAutenticated === null){
             return <h1>Carga</h1>
         }
-    
-
-        function isAdmin(){
-            const admin = localStorage.getItem('role')
-            if(admin == 'admin'){
-                return true
-            }else{
-                return false
-            }
-        }
-    
 
     return (
         // Visual

@@ -2,8 +2,8 @@
 import Logo from '../../components/Logo'
 
 import TableCategoryAge from '../../components/Tables/TableCategoryAge'
-import TableCategoryWeigthMale from '../../components/TableCategoryWeigthMale'
-import TableCategoryWeigthFem from '../../components/TableCategoryWeigthFem'
+import TableCategoryWeigthMale from '../../components/Tables/TableCategoryWeigthMale'
+import TableCategoryWeigthFem from '../../components/Tables/TableCategoryWeigthFem'
 
 
 

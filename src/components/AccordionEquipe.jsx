@@ -2,7 +2,7 @@ import Accordion from 'react-bootstrap/Accordion';
 
 function AccordionEquipe() {
   return (
-    <Accordion defaultActiveKey="0">
+    <Accordion>
       <Accordion.Item eventKey="0">
         <Accordion.Header>Mallas (Singlet)</Accordion.Header>
         <Accordion.Body>
