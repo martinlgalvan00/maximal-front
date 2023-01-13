@@ -2,8 +2,8 @@ import Accordion from 'react-bootstrap/Accordion';
 
 function AccordionEquipe() {
   return (
-    <Accordion>
-      <Accordion.Item eventKey="0" alwaysOpen>
+    <Accordion alwaysOpen>
+      <Accordion.Item eventKey="0" >
         <Accordion.Header>Mallas (Singlet)</Accordion.Header>
         <Accordion.Body>
         <p>
