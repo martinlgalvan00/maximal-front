@@ -3,7 +3,7 @@ import Accordion from 'react-bootstrap/Accordion';
 function AccordionEquipe() {
   return (
     <Accordion>
-      <Accordion.Item eventKey="0">
+      <Accordion.Item eventKey="0" alwaysOpen>
         <Accordion.Header>Mallas (Singlet)</Accordion.Header>
         <Accordion.Body>
         <p>
