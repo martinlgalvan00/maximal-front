@@ -68,7 +68,7 @@ return (
 
                 </div>
                 <div class="card-footer">
-                    <small class="text-muted">Last updated 3 mins ago</small>
+                    <small class="text-muted">Última vez actualizado el 13/01/2022</small>
                 </div>
         </div>
 
