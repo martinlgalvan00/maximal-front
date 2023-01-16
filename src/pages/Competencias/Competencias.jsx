@@ -3,7 +3,7 @@ import Logo from '../../components/Logo'
 import CardElite1 from './../../components/Cards/CardElite1'
 
 
-function CategorysPage(){
+function CompetitionPage(){
 
     return (
         <main className='container-sm'>
@@ -19,4 +19,4 @@ function CategorysPage(){
 }
 
 
-export default CategorysPage
+export default CompetitionPage
