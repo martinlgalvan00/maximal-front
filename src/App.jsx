@@ -9,8 +9,10 @@ import RecordsListPage from "./pages/records/RecordsListPage"
 import CategorysPage from "./pages/categorys/CategorysPage"
 import AdminNoticesPage from "./pages/notices/AdminNoticesPage"
 import AdminEditNoticesPage from "./pages/notices/AdminEditNoticesPage"
+import CompetitionPage from "./pages/Competencias/Competencias"
 
-import NavBar from './components/NavBarOffCanvas'
+
+import NavBar from './components/NavBar/NavBarOffCanvas'
 
 import * as authService from "./services/auth.services"
 import { Routes, Route, Link, useNavigate, Navigate} from 'react-router-dom'
@@ -66,6 +68,7 @@ function App(){
                 <Route path="/login" element={<LoginPage onLogin={onLogin} />} />
                 <Route path="/records" element={<RecordsListPage/>}/>
                 <Route path="/categorys" element={<CategorysPage/>}/>
+                <Route path="/competition" element={<CompetitionPage/>}/>
                 <Route path="/notices" element={<RoutePrivate isAutenticate={isAutenticated}><AdminNoticesPage/></RoutePrivate>}/>
                 <Route path="/notices/:id" element={<RoutePrivate isAutenticate={isAutenticated}><AdminEditNoticesPage/></RoutePrivate>}/>
 

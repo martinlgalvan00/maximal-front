@@ -2,8 +2,8 @@ import { useEffect, useState } from 'react';
 import {Link, useParams} from 'react-router-dom';
 import * as NoticesServices from '../services/notices.services.js';
 import Logo from '../components/Logo'
-import ModalReglas from '../components/ModalReglas'
-import AccordionEquipe from '../components/AccordionEquipe'
+import ModalReglas from '../components/Modals/ModalReglas'
+import AccordionEquipe from '../components/Accordions/AccordionEquipe'
 
 
 const name = localStorage.getItem('name')

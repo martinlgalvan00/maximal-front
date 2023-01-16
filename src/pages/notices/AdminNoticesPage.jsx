@@ -2,7 +2,7 @@ import {useState, useEffect} from 'react'
 import { Routes, Route, Link, useNavigate, Navigate} from 'react-router-dom'
 
 import Logo from '../../components/Logo'
-import CreateNotice from '../../components/CreateNotice'
+import CreateNotice from '../../components/Notices/CreateNotice'
 
 import * as NoticesServices from '../../services/notices.services'
 
