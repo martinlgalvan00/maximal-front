@@ -1,6 +1,6 @@
 import Logo from '../../components/Logo'
 
-import CardElite1 from './../../components/Cards/CardElite1'
+import CardElite1 from '../../components/Cards/CardElite1'
 
 
 function CompetitionPage(){

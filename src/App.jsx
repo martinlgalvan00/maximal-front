@@ -9,10 +9,10 @@ import RecordsListPage from "./pages/records/RecordsListPage"
 import CategorysPage from "./pages/categorys/CategorysPage"
 import AdminNoticesPage from "./pages/notices/AdminNoticesPage"
 import AdminEditNoticesPage from "./pages/notices/AdminEditNoticesPage"
-import CompetitionPage from "./pages/Competencias/Competencias"
+import CompetitionPage from "./pages/competition/Competencias"
 
 
-import NavBar from './components/NavBar/NavBarOffCanvas'
+import NavBarMaximal from './components/Navbar/NavOffCan'
 
 import * as authService from "./services/auth.services"
 import { Routes, Route, Link, useNavigate, Navigate} from 'react-router-dom'
@@ -61,7 +61,7 @@ function App(){
        
         <>
 
-        <NavBar />
+        <NavBarMaximal />
 
             <Routes>
                 <Route path="/" element={<HomePage/>}/>
