@@ -1,6 +1,7 @@
 import Card from 'react-bootstrap/Card';
 import Logo from '../Logo'
-import CardPrimerElite from './Cards Images/CardPrimerEliteImages'
+import CardElite1Images from './Cards Images/CardElite1Images'
+
 
 function CardElite2020() {
   return (
@@ -14,7 +15,7 @@ function CardElite2020() {
         </Card.Text>
       </Card.Body>
       <Card.Footer className="bg-transparent border-0">
-        <CardPrimerElite />
+        <CardElite1Images />
       </Card.Footer>
     </Card>
 

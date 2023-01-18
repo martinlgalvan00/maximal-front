@@ -10,7 +10,7 @@ function CardSouth() {
       <Card.Body className='text-center'>
         <Card.Title>Primera edición - 8-9/10/2022</Card.Title>
         <Card.Text>
-          South Ameria Strongest Man fue un evento internacional de Strongman realizado en el transcurso de 2 días. Los eventos fueron Peso muerto, Circus dumbell, Morombit, Yoke y piedra natural de 150kg. Contó con la presencia tanto de atletas de elite, como nacionales.
+          South Ameria Strongest Man fue un evento internacional de Strongman realizado en el transcurso de 2 días. Los eventos fueron Peso muerto, Circus dumbell, Mooring bitt, Yoke y piedra natural de 150kg. Contó con la presencia tanto de atletas de elite, como nacionales.
         </Card.Text>
       </Card.Body>
       <Card.Footer className="bg-transparent border-0">
