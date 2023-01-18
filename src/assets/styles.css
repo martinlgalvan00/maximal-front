@@ -11,12 +11,27 @@ a{
 }
   
 .a:hover{
-  font-size: 1.5em;
+  font-size: 1.15em;
 }
 
 .mrg-left {
   padding-left: 200px;
 }
+
+.tableRecords{
+  font-size: 0.9em;
+}
+
+@media screen and (max-width: 500px) {
+  .tableRecords{
+    font-size: 0.75em;
+  }
+}
+
+.wid{
+  width: 100px;
+}
+
 
   .tableRecords tr:nth-child(4) {background-color: rgb(196, 196, 196);}
   .tableRecords tr:nth-child(5) {background-color: rgb(196, 196, 196);}

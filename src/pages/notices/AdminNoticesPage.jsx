@@ -15,17 +15,22 @@ function AdminNoticesPage(){
         NoticesServices.findAllNotices()
         .then(data => {
             setNotice(data)
+            setStatus(true)
         })
     }, [status])
 
     function deleteNotice(id){
         NoticesServices.deleteNotice(id)
-        setStatus(true)
+            .then(
+                setStatus(false)
+            )
+
 
     }
 
     return (
         <main className='container-sm'>
+
             <div className='row justify-content-center'>
                 <Logo />   
             </div>
@@ -34,14 +39,15 @@ function AdminNoticesPage(){
                 <CreateNotice/>
             </div>
 
-            <div className='row justify-content-center'>
+            <div className='table-responsive'>
+
             <table class="table">
                 <thead>
                     <tr>
-                    <th scope="col">Nombre</th>
-                    <th scope="col">Descripción</th>
-                    <th scope="col">Formulario</th>
-                    <th scope="col">Acciones</th>
+                    <th>Nombre</th>
+                    <th>Descripción</th>
+                    <th>Formulario</th>
+                    <th>Acciones</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -62,8 +68,8 @@ function AdminNoticesPage(){
                    
                 </tbody>
             </table>
-                
             </div>
+
   
             
 

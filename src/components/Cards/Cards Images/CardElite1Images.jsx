@@ -20,7 +20,7 @@ function CardElite2021Images() {
       
         
       {imgsElite2021.map((img) =>
-      <div className='col-12 col-lg-4 img p-0'>
+      <div className='col-12 col-md-5 col-lg-4 p-0'>
         <img className='img-fluid my-1' src={img} alt="" />
       </div>
        )}

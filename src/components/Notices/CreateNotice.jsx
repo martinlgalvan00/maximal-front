@@ -10,7 +10,6 @@ function createNotice(){
     const [name, setName] = useState("")
     const [description, setDescription] = useState("")
     const [form, setForm] = useState("")
-    const [image, setImage] = useState("")
     const navigate = useNavigate()
 
     function changeName(e){
@@ -25,13 +24,10 @@ function createNotice(){
         setForm(e.target.value)
     }
 
-    function changeImage(e){
-        setImage(e.target.file)
-    }
     //Solucionar problema fakepath
 
     function onSubmit(){
-        NoticeService.createNotice({name,description,form,image})
+        NoticeService.createNotice({name,description,form})
     }
 
     return (
@@ -43,22 +39,17 @@ function createNotice(){
 
                     <div className="my-3">
                         <label htmlFor="name" className="visually-hidden ">Nombre de la noticia</label>
-                        <input type="text" className="form-control" id="name" name="name"  onChange={changeName} value={name} placeholder="Competencia el **/**" />
+                        <input type="text" className="form-control" id="name" name="name"  onChange={changeName} value={name} placeholder="Nombre de la noticia" />
                     </div>
 
                     <div className="my-3">
                         <label htmlFor="description" className="visually-hidden ">Descripción de la noticia</label>
-                        <input type="text" className="form-control" id="description" name="description"  onChange={changeDescription} placeholder="Descripcion de la noticia" />
+                        <textarea type="text" className="form-control" id="description" name="description"  onChange={changeDescription} placeholder="Descripcion de la noticia" />
                     </div>
 
                     <div className="my-3">
                         <label htmlFor="form" className="visually-hidden ">Formulario</label>
                         <input type="text" className="form-control" id="form" name="form"  onChange={changeForm} placeholder="Formulario" />
-                    </div>
-
-                    <div className="my-3 form-check p-0">
-                        <label htmlFor="image" className="visually-hidden ">Imagen de la noticia</label>
-                        <input type="file" className="form-control" id="image" name="image"  onChange={changeImage} placeholder="https" />
                     </div>
                     <button className='input-group-text btn btn-warning'>Crear noticia</button>
  
@@ -66,8 +57,7 @@ function createNotice(){
             </div>
            
         </div>
-            
-
+    
     )
 }
 

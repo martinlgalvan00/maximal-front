@@ -156,6 +156,15 @@ function UsersListPage() {
     return (
         <section className='container'>
             <Logo />
+
+            <div className='row justify-content-center'>
+                <div className='col-8 text-center my-4'>
+                    <h2 className='my-3'>Records mundiales</h2>
+                    <p className='my-2'>Esta página utiliza datos de extraidos directamente de Open Powerlifting</p>
+
+                </div>
+
+            </div>
     
             <div className='row justify-content-center'>
                 <div className='col-6'>
@@ -175,7 +184,7 @@ function UsersListPage() {
             </div>
 
             <div className='row justify-content-center my-2'>
-                <div className='col-10 col-lg-6'>
+                <div className='col-12 col-lg-6'>
                     <h2 className='text-center my-5 pb-2'>Sentadilla (Full Power)</h2>
                     <table className="table table-bordered text-center align-middle tableRecords">
                         <thead className='table-light'>
@@ -205,7 +214,7 @@ function UsersListPage() {
                 </div>
 
 
-                <div className='col-10 col-lg-6'>
+                <div className='col-12 col-lg-6'>
                     <h2 className='text-center my-5 pb-2'>Banco plano (Full Power)</h2>
                     <table className="table table-bordered text-center align-middle tableRecords">
                         <thead className='table-light'>
@@ -235,7 +244,7 @@ function UsersListPage() {
                 </div>
 
 
-                <div className='col-10 col-lg-6'>
+                <div className='col-12 col-lg-6'>
                     <h2 className='text-center my-5 pb-2'>Peso muerto (Full Power)</h2>
                     <table className="table table-bordered text-center align-middle tableRecords">
                         <thead className='table-light'>
@@ -265,7 +274,7 @@ function UsersListPage() {
                 </div>
 
 
-                <div className='col-10 col-lg-6'>
+                <div className='col-12 col-lg-6'>
                     <h2 className='text-center my-5 pb-2'>Total (Full Power)</h2>
                     <table className="table table-bordered text-center align-middle tableRecords">
                         <thead className='table-light'>

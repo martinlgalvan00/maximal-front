@@ -91,7 +91,7 @@ function App(){
                     </li>
                 </ul>
 
-                <p className="text-light text-center mt-3 ">&copy; 2022 | Sitio realizado por Martin Galvan</p>
+                <p className="text-light text-center mt-3 ">&copy; 2023 | Sitio realizado por Martin Galvan</p>
             </div>
         </footer>
 

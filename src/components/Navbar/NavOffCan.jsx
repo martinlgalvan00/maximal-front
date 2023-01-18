@@ -55,7 +55,7 @@ function isAdmin(){
 <>
         <Navbar key={"lg"} bg="light" expand={"lg"} className="mb-3 ">
           <Container fluid >
-            <Navbar.Brand href="/">Maximal STR CORP</Navbar.Brand>
+            <Navbar.Brand href="/">Maximal Strength Corporation</Navbar.Brand>
             <Navbar.Toggle aria-controls={`offcanvasNavbar-lg-${"lg"}`} />
             <Navbar.Offcanvas
               id={`offcanvasNavbar-lg-${"lg"}`}
