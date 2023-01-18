@@ -35,7 +35,7 @@ return (
     <div className="row justify-content-center colorFondo">
 
         <h2 className="my-4 col-12 text-center">Organizadora de eventos deportivos.</h2>
-        <p className="mt-4 mb-5 col-10 col-lg-6 text-center">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum ratione nesciunt non voluptatem sunt mollitia ex sed totam, vel ullam modi deleniti rem, exercitationem sapiente commodi iusto illum veniam amet! Lorem ipsum dolor sit amet consectetur adipisicing elit. Impedit unde fugiat cum iure, vero dicta aspernatur itaque sit voluptate ea minima minus est exercitationem iusto explicabo fugit repudiandae? Delectus, ullam!</p>
+        <p className="mt-4 mb-5 col-10 col-lg-6 text-center">Somos una empresa privada organizadora de eventos de fuerza en general, Powerlifting, Strongman, Strongwoman. Nuestros torneos y competencias son libres de federaciones y abierto a todo el mundo indiferentemente del nivel y la edad. Maximal nace desde la necesidad de consolidar una estructura y organización que de la mayor seriedad y profesionalismo al deporte. Sé parte.</p>
     
     </div>
 

@@ -72,7 +72,7 @@ function isAdmin(){
                   <Nav.Link className='a' href="/">Home</Nav.Link>
                   <Nav.Link className='a' href="/categorys">Categorias</Nav.Link>
                   <Nav.Link className='a' href="/records">Records</Nav.Link>
-                  <Nav.Link className='a' href="/competition">Records</Nav.Link>
+                  <Nav.Link className='a' href="/competition">Competencias</Nav.Link>
                   {isAdmin() && <Nav.Link className='a' href={`/notices`}>Administrar noticias</Nav.Link>}
                   {!isAutenticated && <><Nav.Link className='a' href={"/login"}>Login</Nav.Link> </>}
                   {isAutenticated && <><Nav.Link className='a' onClick={onLogout}>Logout</Nav.Link> </>}
