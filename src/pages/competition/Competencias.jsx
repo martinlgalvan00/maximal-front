@@ -1,8 +1,11 @@
 import Logo from '../../components/Logo'
 
+import CardElite2020 from '../../components/Cards/CardElite2020'
 import CardElite2021 from '../../components/Cards/CardElite2021'
 import CardElite2022 from '../../components/Cards/CardElite2022'
 import CardCopaPitbull from '../../components/Cards/CardCopaPitbull'
+import CardSouth from '../../components/Cards/CardSouth'
+
 
 
 
@@ -25,16 +28,26 @@ function CompetitionPage(){
 
                     <div class="carousel-inner">
 
+                        <div class="carousel-item active">
+                                <CardElite2020 />              
+                        </div>
+
                         <div class="carousel-item ">
                                 <CardElite2021/>
                         </div>
-                        <div class="carousel-item active">
+                        
+                        <div class="carousel-item ">
                                 <CardElite2022/>                
                         </div>
 
                         <div class="carousel-item">
                                 <CardCopaPitbull />              
                         </div>
+
+                        <div class="carousel-item">
+                                <CardSouth />              
+                        </div>
+                        
                     </div>
                 </div>
 

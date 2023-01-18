@@ -10,23 +10,17 @@ let imgsElite2021 = images.map((image) => {
   
 })
 
-
-
-
 function CardElite2021Images() {
   return (
     <div className='row justify-content-center'>
-      
-      
         
       {imgsElite2021.map((img) =>
+
       <div className='col-12 col-md-5 col-lg-4 p-0'>
         <img className='img-fluid my-1' src={img} alt="" />
       </div>
+
        )}
-
-
-    
 
     </div>
   );

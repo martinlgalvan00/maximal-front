@@ -8,9 +8,9 @@ function CardCopaPitbull() {
     <Card className='border-0'>
       <Card.Header className='border-0 text-center' as="h2">Copa Pitbull</Card.Header>
       <Card.Body className='border-0 text-center'>
-        <Card.Title>Primera edición - 11/07/2019</Card.Title>
+        <Card.Title>Primera edición - 5-6/11/2022</Card.Title>
         <Card.Text>
-          La Copa Pitbull fue un evento realizado en el transcurso de dos días. Contó con categoría amateur y profesional. Más de 250 atletas, transmitido en vivo y fotos profesionales.
+          La Copa Pitbull fue un evento de Powerlifting realizado en el transcurso de dos días. Movimientos ejecutados: Sentadilla, Banco plano y peso muerto. Contó con categoría amateur y profesional. Más de 250 atletas, 2 tablados, con transmitido en vivo cada uno.
         </Card.Text>
       </Card.Body>
       <Card.Footer className="bg-transparent border-0">
