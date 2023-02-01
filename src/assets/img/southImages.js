@@ -8,6 +8,8 @@ import photo7 from './strongestMan/piedra2.jpg'
 import photo8 from './strongestMan/yoke.jpg'
 import photo9 from './strongestMan/yoke2.jpg'
 
+
+
 const images = [
     {"name": photo1},
     {"name": photo2},

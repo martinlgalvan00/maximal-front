@@ -98,14 +98,14 @@ return (
 
     <h2 className="text-center my-5">Últimas novedades</h2>
 
-    <div class="row justify-content-center g-2 mx-3">
+    <div className="row justify-content-center g-2 mx-3">
     {notice.map(element =>
-        <div key={element._id} class="col-12 col-md-6 col-lg-6 col-xl-3 text-center">
-            <div class="card">
-            <img src={logoNotices} alt={element.name} class="card-img-top bg-dark" />
-            <div class="card-body">
-                <h3 class="card-title">{element.name}</h3>
-                <p class="card-text">{element.description}</p>
+        <div key={element._id} className="col-12 col-md-6 col-lg-6 col-xl-3 text-center">
+            <div className="card">
+            <img src={logoNotices} alt={element.name} className="card-img-top bg-dark" />
+            <div className="card-body">
+                <h3 className="card-title">{element.name}</h3>
+                <p className="card-text">{element.description}</p>
                 <a target="_BLANK" href={element.form}>{element.form}</a>
             </div>
         </div>

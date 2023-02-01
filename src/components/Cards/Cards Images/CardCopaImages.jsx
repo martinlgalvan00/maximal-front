@@ -15,7 +15,7 @@ function CardCopaPitbull() {
     <div className='row justify-content-center'>
       
       {imgsCopaPitbull.map((img) =>
-      <div className='col-12 col-md-5 col-lg-4 m-0 p-0'>
+      <div key={img} className='col-12 col-md-5 col-lg-4 m-0 p-0'>
         <img className='img-fluid my-1' src={img} alt="" />
       </div>
        )}

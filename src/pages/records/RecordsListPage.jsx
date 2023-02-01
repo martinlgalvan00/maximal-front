@@ -154,19 +154,14 @@ function UsersListPage() {
     recordsTotal.sort((x,y) => x.WeightClassKg - y.WeightClassKg) 
 
     return (
-        <section className='container'>
+        <section className='container-fluid'>
             <Logo />
 
             <div className='row justify-content-center'>
                 <div className='col-8 text-center my-4'>
                     <h2 className='my-3'>Records mundiales</h2>
                     <p className='my-2'>Esta página utiliza datos de extraidos directamente de Open Powerlifting</p>
-
-                </div>
-
-            </div>
-    
-            <div className='row justify-content-center'>
+                    <div className='row justify-content-center'>
                 <div className='col-6'>
                     <Select 
                         defaultValue={optionsAge[5]}
@@ -174,14 +169,19 @@ function UsersListPage() {
                         onChange={handleChangeAge}
                     />
                 </div>
-                <div className='col-6'>
-                    <Select 
-                        defaultValue={optionsSex[0]}
-                        options={optionsSex} 
-                        onChange={handleChangeSex}
-                    />
+                    <div className='col-6'>
+                        <Select 
+                            defaultValue={optionsSex[0]}
+                            options={optionsSex} 
+                            onChange={handleChangeSex}
+                        />
+                    </div>
                 </div>
+                </div>
+
             </div>
+    
+            
 
             <div className='row justify-content-center my-2'>
                 <div className='col-12 col-lg-6'>

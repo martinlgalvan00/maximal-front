@@ -4,6 +4,7 @@ import logo from './../../../assets/img/usuario.png'
 import images from '../../../assets/img/southImages'
 
 
+
 let imgsSouth = images.map((image) => {
   
   return `${image.name}`
@@ -16,7 +17,7 @@ function CardSouthImages() {
       
       {imgsSouth.map((img) =>
 
-      <div className='col-12 col-md-5 col-lg-4 p-0'>
+      <div key={img} className='col-12 col-md-5 col-lg-4 p-0'>
         <img className='img-fluid my-1' src={img} alt="" />
       </div>
 

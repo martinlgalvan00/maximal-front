@@ -2,10 +2,11 @@ import Card from 'react-bootstrap/Card';
 import Logo from '../Logo'
 import CardSouthImages from './Cards Images/CardSouthImages'
 
+
 function CardSouth() {
   return (
 
-    <Card className='border-0' >
+    <Card className='border-0 row justify-content-center' >
       <Card.Header className='border-0 text-center' as="h2">South America Strongest Man - 1º</Card.Header>
       <Card.Body className='text-center'>
         <Card.Title>Primera edición - 8-9/10/2022</Card.Title>

@@ -16,7 +16,7 @@ function CardElite2020Images() {
        
       {imgsElite2020.map((img) =>
 
-      <div className='col-12 col-md-5 col-lg-4 p-0'>
+      <div key={img} className='col-12 col-md-5 col-lg-4 p-0'>
         <img className='img-fluid my-1' src={img} alt="" />
       </div>
 

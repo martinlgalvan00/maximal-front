@@ -10,15 +10,16 @@ import TableCategoryWeigthFem from '../../components/Tables/TableCategoryWeigthF
 function CategorysPage(){
 
     return (
-        <main className='container-sm'>
+        <main className='container-fluid'>
             <Logo />
             <div className='row justify-content-center'>
-                <h2 className='col-12 text-center my-4'>Categoria por edad - Hombres y mujeres</h2>
-                <TableCategoryAge />
+                <div className='col-12 col-lg-6'>
+                    <h2 className=' text-center my-4'>Categoria por edad - Hombres y mujeres</h2>
+                    <TableCategoryAge />
 
-            </div>
+                </div>
 
-            <div className='row justify-content-center'>
+                <div className='row justify-content-center'>
                 <div className='col-12 col-lg-6'>
                     <h2 className='text-center my-4'>Categoria por peso - Hombres</h2>
                     <TableCategoryWeigthMale/>
@@ -30,6 +31,10 @@ function CategorysPage(){
                 </div>
 
             </div>
+            </div>
+            
+
+            
 
             
             
