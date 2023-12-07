@@ -4,10 +4,15 @@ import logoMaximal from '../assets/img/logoMaximal.png'
 import backgroundMaximal from '../assets/img/backgroundMaximal.jpg'
 import videoPhone from '../assets/videos/MaximalPhone.mp4'
 import ReactPlayer from 'react-player'
+import { useEffect } from 'react'
 
 function Logo(){
 
-    const [anchoPagina, setAnchoPagina] = useState(window.innerWidth)
+    const [anchoPagina, setAnchoPagina] = useState()
+
+    useEffect(() => {
+        setAnchoPagina(window.innerWidth)
+    }, [])
     
     return (
         <div className={`main-container row m-0 p-0 ${"back"}`}>

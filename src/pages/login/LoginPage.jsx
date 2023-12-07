@@ -30,7 +30,6 @@ function LoginPage({onLogin}){
     return (
         <main className='container-sm'>
 
-            <Logo />
             <h2 className='text-center my-5'>Iniciar Sesión</h2>
             
             {error && 
