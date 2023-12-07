@@ -11,24 +11,21 @@ function CreateNotice({ refresh }) {
 
     function changeName(e) {
         setName(e.target.value);
-        console.log(e.target.value)
+        
     }
 
     function changeDescription(e) {
         setDescription(e.target.value);
-        console.log(e.target.value)
     }
 
     function changeForm(e) {
         setForm(e.target.value);
-        console.log(e.target.value)
     }
 
 
     // Manejar cambios en la carga de archivos
     function handleFileChange(e) {
         setImage(e.target.files[0]);
-        console.log(e.target.files[0])
     }
 
     function onSubmit(e) {
@@ -36,7 +33,6 @@ function CreateNotice({ refresh }) {
 
         NoticeService.createNotice({name,description,form,image}).then(() => {
             refresh();
-            console.log("done")
 
         });
     }
