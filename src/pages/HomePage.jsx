@@ -41,7 +41,6 @@ return (
 
 <main className="container-fluid">
     
-    <Logo />
     
     <div className="row justify-content-center colorFondo">
 

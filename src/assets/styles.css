@@ -1,5 +1,5 @@
 .back {
-  background-color: rgb(71, 71, 69);
+  background-color: rgb(39, 39, 38);
 }
 
 
@@ -27,11 +27,37 @@ a{
   font-size: 0.9em;
 }
 
-@media screen and (max-width: 500px) {
-  .tableRecords{
-    font-size: 0.75em;
-  }
+.main-container {
+  position: relative;
+  height: 700px;
+  width: 100%;
+  overflow: hidden;
 }
+
+.main-logo-container {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: baseline;
+  z-index: 1; /* Coloca el logo encima de la foto con un índice superior */
+}
+
+.video-container {
+  position: relative;
+  width: 100%;
+  top: -120px;
+  filter: blur(5px) grayscale(40%);
+  object-fit: contain;
+  padding: 0 !important;
+  margin: 0 !important;
+
+}
+
 
 .wid{
   width: 100px;
@@ -84,3 +110,27 @@ a{
 .btnLeft:hover{
   opacity: 1;
 }
+
+
+
+@media screen and (min-width: 1000px) and (max-width: 1400px) 
+{
+  .video-container {
+    top: -24px;
+  }
+}
+
+
+@media screen and (max-width: 500px) {
+  .tableRecords{
+    font-size: 0.75em;
+  }
+
+  
+.main-container {
+  height: 600px;
+}
+
+
+}
+

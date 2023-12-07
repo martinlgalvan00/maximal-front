@@ -11,7 +11,7 @@ function CategorysPage(){
 
     return (
         <main className='container-fluid'>
-            <Logo />
+            
             <div className='row justify-content-center'>
                 <div className='col-12 col-lg-6'>
                     <h2 className=' text-center my-4'>Categoria por edad - Hombres y mujeres</h2>

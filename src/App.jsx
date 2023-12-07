@@ -1,6 +1,11 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap/dist/js/bootstrap';
 import '../src/assets/styles.css';
+// Prime react styles
+import "primereact/resources/themes/lara-light-indigo/theme.css";     
+import "primereact/resources/primereact.min.css";
+import 'primereact/resources/primereact.css';    
+
 import {useState, useEffect} from 'react'
 
 import HomePage from "./pages/HomePage"
@@ -17,6 +22,7 @@ import NavBarMaximal from './components/Navbar/NavOffCan'
 import * as authService from "./services/auth.services"
 import { Routes, Route, Link, useNavigate, Navigate} from 'react-router-dom'
 import { Nav } from 'react-bootstrap';
+import Logo from './components/Logo';
 
 
 function RoutePrivate( {isAutenticate, children}){
@@ -56,13 +62,75 @@ function App(){
             return <h1>Carga</h1>
         }
 
+          
+      function onLogout(){
+          
+          setIsAutenticated(false)
+          localStorage.removeItem('token')
+          localStorage.removeItem('role')
+          localStorage.removeItem('_id')
+          localStorage.removeItem('name')
+          
+          authService.logout()
+          navigate('/')
+      }
+      
+      if(isAutenticated === null){
+          return <h1>Carga</h1>
+      }
+      
+      
+      function isAdmin(){
+          const admin = localStorage.getItem('role')
+          if(admin == 'admin'){
+              return true
+          }else{
+              return false
+          }
+      }
+
     return (
         // Visual
        
         <>
 
-        <NavBarMaximal />
+        <nav className="navbar navbar-expand-lg bg-light">
+                    
+                    <div className="container-fluid">
+                        <a className="navbar-brand" href="/">TOM</a>
+                        <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                            <span className="navbar-toggler-icon"></span>
+                        </button>
+                        <div className="collapse navbar-collapse justify-content-end" id="navbarNav">
+                            <ul className="navbar-nav text-center">
+                                <li className="nav-item">
+                                    <Link className='nav-link' to="/">Inicio</Link>
+                                </li>
+                                <li className="nav-item">
+                                {<Link className='nav-link' to={`/categorys`}>Categorias</Link>}
+                                </li>
+                                <li className="nav-item">
+                                {<Link className='nav-link' to={`/records/`}>Records</Link>}
+                                </li>
+                                <li className="nav-item">
+                                {<Link className='nav-link' to={`/competition/`}>Competencias</Link>}
+                                </li>
+                                <li className="nav-item">
+                                {isAutenticated && isAdmin() && <><Link className='nav-link' to={`/notices/`}>Administrar noticias</Link></>}
+                                </li>
+                                <li className="nav-item">
+                                {!isAutenticated && <><Link className='nav-link' to={"/login"}>Iniciar sesión</Link> </>}
+                                </li>
+                                <li className="nav-item">
+                                {isAutenticated && <><Link className='nav-link' onClick={onLogout}>Cerrar sesión</Link> </>}
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </nav>
 
+               
+        <Logo />
             <Routes>
                 <Route path="/" element={<HomePage/>}/>
                 <Route path="/login" element={<LoginPage onLogin={onLogin} />} />
@@ -74,7 +142,7 @@ function App(){
 
                 <Route path="*" element={<div><h1>404</h1><p>Esta pagina no se encuentra disponible.</p></div>}/>
             </Routes>
-
+      
 
         <footer className="container-fluid bg-dark mt-5">
             <div className="row">

@@ -36,25 +36,34 @@ async function findByNoticeId(id) {
         })
 }
 
-//Crea una noticia
+// Crea una noticia
 async function createNotice(notice) {
-    return fetch(`https://maximal-back.vercel.app/api/notices`, {
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/json',
-            'auth-token': localStorage.getItem('token')
-        },
-        body: JSON.stringify(notice)
-    })
-    .then(response => {
-        if (response.ok) {
-            return response.json()
+
+    try {
+        const response = await fetch(`https://maximal-back.vercel.app/api/notices`, {
+            method: 'POST',
+            headers: {
+                'auth-token': localStorage.getItem('token'),
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(notice),
+        });
+
+        if (!response.ok) {
+            // Manejar el caso donde la respuesta no fue exitosa
+            const errorData = await response.json();
+            throw new Error(errorData.message || 'Error al crear la noticia');
         }
-        else {
-            throw new Error('No se pudo crear la noticia')
-        }
-    })
+
+        const responseData = await response.json();
+        return responseData;
+    } catch (error) {
+        // Manejar errores de red, de parseo de JSON, o cualquier otro error aquí
+        console.error('Error en la solicitud:', error.message);
+        throw error;
+    }
 }
+
 
 //Editar un día
 

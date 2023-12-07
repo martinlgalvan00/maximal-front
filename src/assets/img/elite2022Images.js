@@ -4,9 +4,9 @@ import hombre3 from './elite2022/rago.jpg'
 import mujer1 from './elite2022/acosta.jpg'
 import mujer2 from './elite2022/chica.jpg'
 import mujer3 from './elite2022/leston.jpg'
-import premiacion1 from './elite2022/premiacion1.jpg'
+import premiacion1 from './elite2022/matias.jpg'
 import premiacion2 from './elite2022/premiacion2.jpg'
-import premiacion3 from './elite2022/premiacion3.jpg'
+import premiacion3 from './elite2022/lautaro.jpg'
 
 const images = [
     {"name": hombre1},

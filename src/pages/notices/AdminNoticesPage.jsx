@@ -3,13 +3,23 @@ import { Routes, Route, Link, useNavigate, Navigate} from 'react-router-dom'
 
 import Logo from '../../components/Logo'
 import CreateNotice from '../../components/Notices/CreateNotice'
+import AdminEditNoticesPage from '../../pages/notices/AdminEditNoticesPage.jsx'
 
 import * as NoticesServices from '../../services/notices.services'
+import { ConfirmDialog, confirmDialog  } from 'primereact/confirmdialog';
 
 function AdminNoticesPage(){
 
+    const [loading, setLoading] = useState([])
+
     const [notice, setNotice] = useState([])
     const [status, setStatus] = useState(false)
+
+    const [show, setShow] = useState(false)
+    const [notice_id, setNotice_id] = useState()
+    const [notice_name, setNotice_name] = useState()
+    const [notice_description, setNotice_description] = useState()
+    const [notice_form, setNotice_form] = useState()
 
     useEffect(() => {
         NoticesServices.findAllNotices()
@@ -19,62 +29,62 @@ function AdminNoticesPage(){
         })
     }, [status])
 
-    function deleteNotice(id){
-        NoticesServices.deleteNotice(id)
-            .then(
-                setStatus(false)
-            )
+    const handleClose = () => setShow(false);
 
+    function openNotice(id,name,description,form){
 
+        setShow(true)
+        setNotice_id(id)
+        setNotice_name(name)
+        setNotice_description(description)
+        setNotice_form(form)
     }
+
+
+    const refresh = () => {setStatus(false)}
 
     return (
         <main className='container-sm'>
 
             <div className='row justify-content-center'>
-                <Logo />   
+                <CreateNotice refresh={refresh}/>
             </div>
 
-            <div className='row justify-content-center'>
-                <CreateNotice/>
-            </div>
+            <div className='row justify-content-center mt-4'>
+                <div className='table-responsive col-8'>
 
-            <div className='table-responsive'>
-
-            <table className="table">
-                <thead>
-                    <tr>
-                    <th>Nombre</th>
-                    <th>Descripción</th>
-                    <th>Formulario</th>
-                    <th>Acciones</th>
-                    </tr>
-                </thead>
-                <tbody>
-                {notice.map(element => 
-                <tr key={element._id}>
-                    <td>{element.name}</td>
-                    <td>{element.description}</td>
-                    <td>{element.form}</td>
-                    <td>
-                        <button onClick={(e) => deleteNotice(element._id)} className='m-1 btn btn-danger'>
-                            <svg xmlns="http://www.w3.org/2000/svg" width="19" height="19" fill="currentColor" className="text-light bi bi-trash3" viewBox="0 0 16 16">
-                                <path d="M6.5 1h3a.5.5 0 0 1 .5.5v1H6v-1a.5.5 0 0 1 .5-.5ZM11 2.5v-1A1.5 1.5 0 0 0 9.5 0h-3A1.5 1.5 0 0 0 5 1.5v1H2.506a.58.58 0 0 0-.01 0H1.5a.5.5 0 0 0 0 1h.538l.853 10.66A2 2 0 0 0 4.885 16h6.23a2 2 0 0 0 1.994-1.84l.853-10.66h.538a.5.5 0 0 0 0-1h-.995a.59.59 0 0 0-.01 0H11Zm1.958 1-.846 10.58a1 1 0 0 1-.997.92h-6.23a1 1 0 0 1-.997-.92L3.042 3.5h9.916Zm-7.487 1a.5.5 0 0 1 .528.47l.5 8.5a.5.5 0 0 1-.998.06L5 5.03a.5.5 0 0 1 .47-.53Zm5.058 0a.5.5 0 0 1 .47.53l-.5 8.5a.5.5 0 1 1-.998-.06l.5-8.5a.5.5 0 0 1 .528-.47ZM8 4.5a.5.5 0 0 1 .5.5v8.5a.5.5 0 0 1-1 0V5a.5.5 0 0 1 .5-.5Z"/>
+                <table className="table">
+                    <thead>
+                        <tr  className='text-center'>
+                            <th>Nombre</th>
+                            <th>Acciones</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                    {notice.map(element => 
+                    <tr key={element._id} className='text-center'>
+                        <td><button className='btn' onClick={() => openNotice(element._id, element.name, element.description, element.form)}>{element.name}</button></td>
+                        <td>
+                        <button onClick={() => openNotice(element._id, element.name, element.description, element.form)} className='btn buttonsEdit'>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" className="bi bi-three-dots-vertical" viewBox="0 0 16 16">
+                                <path d="M9.5 13a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0z"/>
                             </svg>
                         </button>
-                    </td>
-                </tr>
-            )}
-                   
-                </tbody>
-            </table>
+                        </td>
+                    </tr>
+                )}
+                    
+                    </tbody>
+                </table>
+                </div>
+                                
             </div>
+            <AdminEditNoticesPage show={show} handleClose={handleClose} refresh={refresh} notice_id={notice_id} notice_name={notice_name} notice_description={notice_description} notice_form={notice_form} />
 
-  
-            
-
-            
-        </main>)           
+        </main>
+        
+        
+        )           
 }
 
 
