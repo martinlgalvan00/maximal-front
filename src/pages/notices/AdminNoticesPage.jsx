@@ -7,6 +7,7 @@ import AdminEditNoticesPage from '../../pages/notices/AdminEditNoticesPage.jsx'
 
 import * as NoticesServices from '../../services/notices.services'
 import { ConfirmDialog, confirmDialog  } from 'primereact/confirmdialog';
+import Blog from '../../components/Blog.jsx'
 
 function AdminNoticesPage(){
 
@@ -80,7 +81,9 @@ function AdminNoticesPage(){
                                 
             </div>
             <AdminEditNoticesPage show={show} handleClose={handleClose} refresh={refresh} notice_id={notice_id} notice_name={notice_name} notice_description={notice_description} notice_form={notice_form} />
-
+            <div>
+                <Blog />
+            </div>
         </main>
         
         

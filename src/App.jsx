@@ -15,7 +15,8 @@ import CategorysPage from "./pages/categorys/CategorysPage"
 import AdminNoticesPage from "./pages/notices/AdminNoticesPage"
 import AdminEditNoticesPage from "./pages/notices/AdminEditNoticesPage"
 import CompetitionPage from "./pages/competition/Competencias"
-
+import BlogPage from './pages/Blog/BlogPage';
+import BlogDetails from './pages/Blog/BlogDetails';
 
 import NavBarMaximal from './components/Navbar/NavOffCan'
 
@@ -23,6 +24,8 @@ import * as authService from "./services/auth.services"
 import { Routes, Route, Link, useNavigate, Navigate} from 'react-router-dom'
 import { Nav } from 'react-bootstrap';
 import Logo from './components/Logo';
+
+
 
 
 function RoutePrivate( {isAutenticate, children}){
@@ -116,6 +119,9 @@ function App(){
                                 {<Link className='nav-link' to={`/competition/`}>Competencias</Link>}
                                 </li>
                                 <li className="nav-item">
+                                {<Link className='nav-link' to={`/blogs/`}>Blog</Link>}
+                                </li>
+                                <li className="nav-item">
                                 {isAutenticated && isAdmin() && <><Link className='nav-link' to={`/notices/`}>Administrar noticias</Link></>}
                                 </li>
                                 <li className="nav-item">
@@ -139,6 +145,8 @@ function App(){
                 <Route path="/competition" element={<CompetitionPage/>}/>
                 <Route path="/notices" element={<RoutePrivate isAutenticate={isAutenticated}><AdminNoticesPage/></RoutePrivate>}/>
                 <Route path="/notices/:id" element={<RoutePrivate isAutenticate={isAutenticated}><AdminEditNoticesPage/></RoutePrivate>}/>
+                <Route path="/blogs/" element={<BlogPage />} />
+                <Route path="/blogs/:id" element={<BlogDetails />} />
 
                 <Route path="*" element={<div><h1>404</h1><p>Esta pagina no se encuentra disponible.</p></div>}/>
             </Routes>

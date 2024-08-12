@@ -45,8 +45,8 @@ return (
     <div className="row justify-content-center colorFondo">
 
         <h2 className="my-4 col-12 col-lg-8 text-center">Organización de eventos deportivos</h2>
-        <p className="mt-4 mb-5 col-10 col-lg-6 text-center">Somos una empresa privada organizadora de eventos de fuerza en general, <b>Powerlifting, Strongman, Strongwoman. </b>  Nuestros torneos y competencias son <b>libres de federaciones</b> y abierto a todo el mundo indiferentemente del nivel y la edad. Maximal nace desde la necesidad de consolidar una estructura y organización que de la mayor seriedad y profesionalismo al deporte. <b>Sé parte.</b></p>
-    
+
+        <p className="mt-4 mb-5 col-10 col-lg-7 text-center">Somos una empresa privada organizadora de eventos de <b>fuerza</b> deportivos y académicos. Nuestros torneos y competencias son <b>libres</b> de federaciones y abierto a todo público indiferentemente del nivel y/o edad.  Nuestras <b>capacitaciones</b> están orientadas a formar entrenadores y/o complementar el conocimiento en deportistas de fuerza.</p>
     </div>
 
     <div className='row justify-content-center mb-4 '>
@@ -97,20 +97,27 @@ return (
 
     <h2 className="text-center my-5">Últimas novedades</h2>
 
-    <div className="row justify-content-center g-2 mx-3">
-    {notice.map(element =>
-        <div key={element._id} className="col-12 col-md-6 col-lg-6 col-xl-3 text-center">
-            <div className="card">
-            <img src={logoNotices} alt={element.name} className="card-img-top bg-dark" />
-            <div className="card-body">
-                <h3 className="card-title">{element.name}</h3>
-                <p className="card-text">{element.description}</p>
-                <a target="_BLANK" href={element.form}>{element.form}</a>
+    <div className="row justify-content-center">
+        {notice.map(element => (
+            <div key={element._id} className="text-center m-auto col-10 col-sm-5 col-xl-4 pb-3" >
+                <div className='card text-center m-auto'>
+
+                <img src={logoNotices} alt={element.name} className="card-img-top bg-dark" />
+                <div className="card-body">
+                    <h3 className="card-title">{element.name}</h3>
+                    <p className="card-text">{element.description}</p>
+                </div>
+                <div className="card-footer border-0 w-100 text-center">
+                    <Link target='blank' to={element.form}>
+                    <button className="btn btn-warning">Ir a formulario</button>
+                    </Link>
+                </div>
             </div>
-        </div>
-    </div>)}
-  
-</div>
+            
+            </div>
+        ))}
+    </div>
+
 
 </main>
 
