@@ -1,6 +1,6 @@
 //Busca todas las noticias
 async function findAllBlogs() {
-    return fetch(`http://localhost:2022/api/blog`, {
+    return fetch(`https://maximal-back.vercel.app/api/blog`, {
         method: 'GET',
         headers: {
             'Content-Type': 'application/json',
@@ -19,7 +19,7 @@ async function findAllBlogs() {
 
 //Busca una noticia por su ID
 async function findByBlogId(id) {
-    return fetch(`https://maximal-back.vercel.app/${id}`, {
+    return fetch(`https://maximal-back.vercel.app/api/blog/${id}`, {
         method: 'GET',
         headers: {
             'Content-Type': 'application/json',
@@ -39,7 +39,7 @@ async function findByBlogId(id) {
 // Crea una noticia
 async function createBlog(formData) {
     try {
-        const response = await fetch(`http://localhost:2022/api/blog`, {
+        const response = await fetch(`https://maximal-back.vercel.app/api/blog`, {
             method: 'POST',
             headers: {
                 'auth-token': localStorage.getItem('token'),
@@ -72,7 +72,7 @@ async function createBlog(formData) {
 
 async function editBlog(id, formData) {
     try {
-        const response = await fetch(`https://maximal-back.vercel.app/${id}`, {
+        const response = await fetch(`https://maximal-back.vercel.app/api/blog/${id}`, {
             method: 'PATCH',
             headers: {
                 'auth-token': localStorage.getItem('token'),
@@ -95,7 +95,7 @@ async function editBlog(id, formData) {
 
 //Eliminar un día por su ID
 async function deleteBlog(id) {
-    return fetch(`https://maximal-back.vercel.app/${id}`, {
+    return fetch(`https://maximal-back.vercel.app/api/blog/${id}`, {
         method: 'DELETE',
         headers: {
             'Content-Type': 'application/json',
