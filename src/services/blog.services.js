@@ -19,7 +19,7 @@ async function findAllBlogs() {
 
 //Busca una noticia por su ID
 async function findByBlogId(id) {
-    return fetch(`http://localhost:2022/api/blog/${id}`, {
+    return fetch(`https://maximal-back.vercel.app/${id}`, {
         method: 'GET',
         headers: {
             'Content-Type': 'application/json',
@@ -72,7 +72,7 @@ async function createBlog(formData) {
 
 async function editBlog(id, formData) {
     try {
-        const response = await fetch(`http://localhost:2022/api/blog/${id}`, {
+        const response = await fetch(`https://maximal-back.vercel.app/${id}`, {
             method: 'PATCH',
             headers: {
                 'auth-token': localStorage.getItem('token'),
@@ -95,7 +95,7 @@ async function editBlog(id, formData) {
 
 //Eliminar un día por su ID
 async function deleteBlog(id) {
-    return fetch(`http://localhost:2022/api/blog/${id}`, {
+    return fetch(`https://maximal-back.vercel.app/${id}`, {
         method: 'DELETE',
         headers: {
             'Content-Type': 'application/json',
