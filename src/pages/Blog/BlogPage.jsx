@@ -76,7 +76,7 @@ const BlogPage = () => {
 
       <div className="row justify-content-center">
         {loading ? (
-          <p>Cargando blogs...</p> // Mostrar un mensaje mientras los blogs están cargando
+          <p></p> // Mostrar un mensaje mientras los blogs están cargando
         ) : (
           filteredBlogs.map(blog => (
             <Link
