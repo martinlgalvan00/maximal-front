@@ -112,7 +112,7 @@ const BlogDetails = () => {
             {blog[0].info.map((data, index) => (
               <div key={index} className="mb-4">
                 <h2 className="list-group-item border-0 p-0 mb-3">{data.title}</h2>
-                <p className="list-group-item border-0 p-0">{data.description}</p>
+                <p className="list-group-item border-0 p-0 css-word">{data.description}</p>
               </div>
             ))}
           </ul>

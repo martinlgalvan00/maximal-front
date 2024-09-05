@@ -138,6 +138,10 @@ a{
   color: #333;
 }
 
+.css-word{
+  white-space: pre-wrap;
+}
+
 .card-text {
   font-size: 1em;
   color: #666;
